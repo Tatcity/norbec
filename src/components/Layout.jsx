@@ -57,7 +57,7 @@ export default function Layout() {
           color: #fff;
           padding: 15px 30px;
           position: relative;
-          z-index: 100; /* keeps header above hero */
+          z-index: 2000; /* ✅ keeps header/nav above hero */
         }
 
         .header-inner {
@@ -94,6 +94,7 @@ export default function Layout() {
           color: #fff;
           cursor: pointer;
           display: block;
+          z-index: 2001; /* ✅ hamburger always clickable */
         }
 
         .nav {
@@ -107,8 +108,8 @@ export default function Layout() {
           border-radius: 8px;
           gap: 15px;
 
-          /* ✅ Ensures dropdown shows on top of hero */
-          z-index: 1000;
+          /* ✅ dropdown always above hero */
+          z-index: 3000;
         }
 
         .nav.open {
