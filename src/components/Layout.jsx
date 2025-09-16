@@ -1,17 +1,16 @@
-// src/components/Layout.jsx
 import { NavLink, Outlet } from "react-router-dom";
 import Footer from "./Footer";
 
 export default function Layout() {
   return (
     <div className="app-layout">
-      {/* ✅ Header */}
+      {/* Header */}
       <header className="header">
         <div className="header-inner">
           {/* Logo + Brand */}
           <div className="brand">
             <img
-              src={`${import.meta.env.BASE_URL}assets/logo.png`}
+              src="/logo.png"
               alt="NorBec Logo"
               className="logo"
             />
@@ -38,7 +37,7 @@ export default function Layout() {
 
       <style jsx="true">{`
         .header {
-          background: linear-gradient(135deg, #6a2c70, #b83b5e); /* ✅ Gradient */
+          background: linear-gradient(135deg, #6a2c70, #b83b5e);
           color: #fff;
           padding: 15px 30px;
         }

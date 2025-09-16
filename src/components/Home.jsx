@@ -1,4 +1,3 @@
-// src/components/Home.jsx
 export default function Home() {
   const services = [
     { title: "Lawn Mowing", icon: "/mowing.jpg" },
@@ -36,7 +35,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: "url('/home.png')" }}>
         <div className="hero-overlay">
           <h1>Transform Your Outdoors Into a Breathtaking Escape</h1>
           <p className="tagline">
@@ -68,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ Testimonials Section */}
+      {/* Testimonials Section */}
       <section className="testimonials">
         <h2>What Our Clients Say</h2>
         <div className="testimonial-grid">
