@@ -1,11 +1,13 @@
-import './App.css'
-import MainRouter from './MainRouter'
+import "./App.css";
+import MainRouter from "./MainRouter";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
-
   return (
-    <MainRouter />
-  )
+    <CartProvider>
+      <MainRouter />
+    </CartProvider>
+  );
 }
 
-export default App
+export default App;

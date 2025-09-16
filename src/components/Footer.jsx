@@ -1,3 +1,4 @@
+// src/components/Footer.jsx
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -9,26 +10,35 @@ export default function Footer() {
         {/* Quick Links */}
         <nav className="links">
           <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/booking">Booking</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/cart">Cart</Link>
+          <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
+
+        {/* Socials */}
+        <div className="socials">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">📘</a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">📸</a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer">🐦</a>
+          <a href="https://github.com" target="_blank" rel="noreferrer">💻</a>
+        </div>
 
         {/* Contact Info */}
         <div className="contact-info">
           <p>📞 (416) 555-1234</p>
-          <p>📧 info@norbec.ca</p>
+          <p>📧 support@myecomshop.com</p>
           <p>📍 Toronto, ON</p>
         </div>
       </div>
 
       <div className="copy">
-        <p>© {year} NorBec Landscaping. All rights reserved.</p>
+        <p>© {year} My E-Shop. All rights reserved.</p>
       </div>
 
       <style jsx="true">{`
         .footer {
-          background: linear-gradient(135deg, #2D1B2A, #6a2c70);
+          background: linear-gradient(135deg, #111827, #1f2937);
           color: #fff;
           padding: 40px 20px 20px;
           margin-top: 60px;
@@ -39,11 +49,12 @@ export default function Footer() {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          gap: 20px;
-          max-width: 1100px;
+          gap: 25px;
+          max-width: 1200px;
           margin: auto;
         }
 
+        /* Quick Links */
         .links {
           display: flex;
           flex-wrap: wrap;
@@ -51,33 +62,50 @@ export default function Footer() {
           justify-content: center;
         }
         .links a {
-          color: #fff;
+          color: #d1d5db;
           text-decoration: none;
           font-weight: 500;
         }
         .links a:hover {
-          color: #ffe082;
+          color: #60a5fa;
         }
 
+        /* Socials */
+        .socials {
+          display: flex;
+          gap: 15px;
+          font-size: 1.4rem;
+        }
+        .socials a {
+          color: #d1d5db;
+          transition: color 0.3s;
+        }
+        .socials a:hover {
+          color: #60a5fa;
+        }
+
+        /* Contact Info */
         .contact-info {
           display: flex;
           flex-direction: column;
           gap: 8px;
           align-items: center;
+          color: #9ca3af;
+          font-size: 0.95rem;
         }
         .contact-info p {
           margin: 0;
-          font-size: 0.95rem;
         }
 
+        /* Copyright */
         .copy {
           margin-top: 20px;
           text-align: center;
           font-size: 0.85rem;
-          opacity: 0.8;
+          opacity: 0.75;
         }
 
-        /* 📱 Responsive */
+        /* Responsive */
         @media (min-width: 768px) {
           .contact-info {
             flex-direction: row;
