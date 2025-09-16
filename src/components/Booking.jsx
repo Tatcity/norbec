@@ -1,12 +1,13 @@
-// src/components/Booking.jsx
 import { useState } from "react";
 
 export default function Booking() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    phone: "",          // ✅ new field
     service: "",
     date: "",
+    additionalInfo: "", // ✅ new field
   });
 
   function handleChange(e) {
@@ -16,18 +17,19 @@ export default function Booking() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert("Booking submitted! ✅");
+    alert("Quotation request submitted! ✅");
   }
 
   return (
     <section className="booking">
       <div className="booking-container">
-        <h2>Book a Service</h2>
+        <h2>Book a Quotation</h2>
         <p className="subtitle">
-          Fill out the form below to schedule your landscaping service with us.
+          Fill out the form below to request a quotation for your landscaping needs.
         </p>
 
         <form className="booking-form" onSubmit={handleSubmit}>
+          {/* Name */}
           <input
             type="text"
             name="name"
@@ -36,6 +38,8 @@ export default function Booking() {
             onChange={handleChange}
             required
           />
+
+          {/* Email */}
           <input
             type="email"
             name="email"
@@ -44,6 +48,18 @@ export default function Booking() {
             onChange={handleChange}
             required
           />
+
+          {/* Phone */}
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Your Phone Number"
+            value={form.phone}
+            onChange={handleChange}
+            required
+          />
+
+          {/* Service Selection */}
           <select
             name="service"
             value={form.service}
@@ -65,6 +81,8 @@ export default function Booking() {
             <option value="Patio & Walkways">Patio & Walkways</option>
             <option value="Fencing">Fencing</option>
           </select>
+
+          {/* Date */}
           <input
             type="date"
             name="date"
@@ -73,9 +91,18 @@ export default function Booking() {
             required
           />
 
-          {/* ✅ Gradient Button */}
+          {/* Additional Info */}
+          <textarea
+            name="additionalInfo"
+            placeholder="Additional information about your project..."
+            value={form.additionalInfo}
+            onChange={handleChange}
+            rows="4"
+          />
+
+          {/* Submit Button */}
           <button type="submit" className="btn-submit">
-            Submit Booking
+            Submit Quotation
           </button>
         </form>
       </div>
@@ -88,8 +115,6 @@ export default function Booking() {
           align-items: center;
           justify-content: center;
           padding: 40px 20px;
-
-          /* ❌ Removed main background color/gradient */
           background: none;
           color: #fff;
         }
@@ -123,14 +148,18 @@ export default function Booking() {
         }
 
         input,
-        select {
+        select,
+        textarea {
           padding: 12px 15px;
           border-radius: 8px;
           border: none;
           font-size: 1rem;
         }
 
-        /* ✅ Gradient Submit Button */
+        textarea {
+          resize: vertical;
+        }
+
         .btn-submit {
           background: linear-gradient(135deg, #6a2c70, #b83b5e);
           color: #fff;

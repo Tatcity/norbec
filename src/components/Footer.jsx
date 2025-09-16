@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -7,8 +6,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        
-        {/* Quick Links - horizontal */}
+        {/* Quick Links */}
         <nav className="links">
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
@@ -16,7 +14,7 @@ export default function Footer() {
           <Link to="/contact">Contact</Link>
         </nav>
 
-        {/* Contact Info - horizontal */}
+        {/* Contact Info */}
         <div className="contact-info">
           <p>📞 (416) 555-1234</p>
           <p>📧 info@norbec.ca</p>
@@ -46,9 +44,9 @@ export default function Footer() {
           margin: auto;
         }
 
-        /* ✅ Links horizontal */
         .links {
           display: flex;
+          flex-wrap: wrap;
           gap: 20px;
           justify-content: center;
         }
@@ -61,12 +59,11 @@ export default function Footer() {
           color: #ffe082;
         }
 
-        /* ✅ Contact info horizontal */
         .contact-info {
           display: flex;
-          gap: 20px;
-          justify-content: center;
-          flex-wrap: wrap;
+          flex-direction: column;
+          gap: 8px;
+          align-items: center;
         }
         .contact-info p {
           margin: 0;
@@ -78,6 +75,14 @@ export default function Footer() {
           text-align: center;
           font-size: 0.85rem;
           opacity: 0.8;
+        }
+
+        /* 📱 Responsive */
+        @media (min-width: 768px) {
+          .contact-info {
+            flex-direction: row;
+            gap: 20px;
+          }
         }
       `}</style>
     </footer>
