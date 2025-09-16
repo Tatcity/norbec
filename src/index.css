@@ -1,4 +1,68 @@
-/* ✅ Hero Section */
+/* ================================
+   ✅ Global + Root (from App.css)
+================================ */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ✅ Fullscreen Fix */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* prevent right-side white strip */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==================================
+   ✅ Hero Section (from index.css)
+================================== */
 .hero {
   background: url("/assets/home.png") center/cover no-repeat;
   min-height: 100vh;
@@ -8,6 +72,8 @@
   text-align: center;
   position: relative;
   color: #fff;
+  width: 100%;
+  overflow: hidden; /* stop background overflow */
 }
 
 .hero-overlay {
@@ -68,9 +134,7 @@
   color: #e8e1f0;
 }
 
-/* ==========================
-   ✅ Logo Fix (remove white circle, fill entire area)
-========================== */
+/* ✅ Logo Fix (override App.css) */
 .logo {
   width: 70px;
   height: 70px;
@@ -82,9 +146,9 @@
   background: none;
 }
 
-/* ==========================
-   ✅ Home Services Teaser (4 across)
-========================== */
+/* ==================================
+   ✅ Home Services
+================================== */
 .home-services {
   padding: 60px 20px;
   text-align: center;
@@ -131,9 +195,9 @@
   margin-top: 20px;
 }
 
-/* ==========================
-   ✅ Full Services Page (2 per row)
-========================== */
+/* ==================================
+   ✅ Full Services Page
+================================== */
 .services {
   padding: 100px 40px;
   background: linear-gradient(to bottom right, #f8f5fa, #ffffff);
@@ -196,9 +260,9 @@
   line-height: 1.5;
 }
 
-/* ==========================
-   ✅ Testimonials Section
-========================== */
+/* ==================================
+   ✅ Testimonials
+================================== */
 .testimonials {
   padding: 80px 20px;
   background: #fafafa;
@@ -245,7 +309,9 @@
   color: #333;
 }
 
-/* ✅ Responsive tweaks */
+/* ==================================
+   ✅ Responsive tweaks
+================================== */
 @media (max-width: 992px) {
   .home-services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -265,4 +331,14 @@
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==================================
+   ✅ Override Root for Fullscreen
+   (only change added here)
+================================== */
+#root {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
