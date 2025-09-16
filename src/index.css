@@ -51,21 +51,21 @@
 }
 
 .hero .btn.secondary {
-  background: #a83279;
+  background: #2D1B2A;
   color: #fff;
-  border: 2px solid #a83279;
+  border: 2px solid #ffffff,;
 }
 
 .brand-line {
   margin-top: 20px;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #d8b4fe;
+  color: #6a2c70;
 }
 
 .slogan {
   font-size: 1.1rem;
-  color: #f1f1f1;
+  color: #d8b4fe;
 }
 
 /* ==========================

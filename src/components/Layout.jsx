@@ -53,7 +53,7 @@ export default function Layout() {
 
       <style jsx="true">{`
         .header {
-          background: linear-gradient(135deg, #6a2c70, #b83b5e);
+          background: linear-gradient(135deg, #2D1B2A, #6a2c70);
           color: #fff;
           padding: 15px 30px;
           position: relative;

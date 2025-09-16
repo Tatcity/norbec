@@ -28,7 +28,7 @@ export default function Footer() {
 
       <style jsx="true">{`
         .footer {
-          background: linear-gradient(135deg, #6a2c70, #b83b5e);
+          background: linear-gradient(135deg, #2D1B2A, #6a2c70);
           color: #fff;
           padding: 40px 20px 20px;
           margin-top: 60px;
