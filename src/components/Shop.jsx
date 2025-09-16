@@ -1,4 +1,3 @@
-// src/components/Shop.jsx
 import { useState } from "react";
 
 export default function Shop() {
@@ -45,7 +44,7 @@ export default function Shop() {
         <div className="product-grid">
           {products.map((p) => (
             <div className="product-card" key={p.id}>
-              <img src={p.image} alt={p.title} />
+              <img src={p.image} alt={p.title} className="product-img" />
               <h3>{p.title}</h3>
               <p className="price">{p.price}</p>
 
@@ -112,13 +111,16 @@ export default function Shop() {
           transform: translateY(-5px);
           box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
         }
-        .product-card img {
+
+        .product-img {
           width: 100%;
-          height: 180px;
-          object-fit: cover;
+          max-height: 200px;
+          object-fit: contain; /* ✅ keeps full image without cutting */
           border-radius: 8px;
           margin-bottom: 15px;
+          background: #f3f4f6; /* light gray background for empty space */
         }
+
         .price {
           font-weight: bold;
           color: #2563eb;
