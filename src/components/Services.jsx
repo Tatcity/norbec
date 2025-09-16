@@ -74,7 +74,7 @@ export default function Services() {
 
         p {
           font-size: 0.95rem;
-          color: #444;
+          color: #ffffffff;
         }
 
         /* ✅ Tablet & Desktop */
