@@ -2,12 +2,16 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
 import Footer from "./Footer";
+import ScrollToTop from "./ScrollToTop"; // ✅ added import
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="app-layout">
+      {/* ✅ ensures page scrolls to top on route change */}
+      <ScrollToTop />
+
       {/* Header */}
       <header className="header">
         <div className="header-inner">
