@@ -27,6 +27,69 @@ export default function Services() {
           </div>
         ))}
       </div>
+
+      <style jsx="true">{`
+        .services {
+          padding: 60px 20px;
+          text-align: center;
+        }
+
+        .subtitle {
+          margin-bottom: 40px;
+          font-size: 1rem;
+          opacity: 0.8;
+        }
+
+        /* ✅ Centered grid */
+        .services-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+          justify-items: center;
+        }
+
+        .service-card {
+          background: #fff;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          max-width: 280px;
+          width: 100%;
+        }
+
+        .service-card img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 8px;
+          margin-bottom: 15px;
+        }
+
+        h3 {
+          margin: 10px 0;
+          font-size: 1.2rem;
+          color: #6a2c70;
+        }
+
+        p {
+          font-size: 0.95rem;
+          color: #444;
+        }
+
+        /* ✅ Tablet & Desktop */
+        @media (min-width: 768px) {
+          .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .services-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      `}</style>
     </section>
   );
 }
