@@ -1,3 +1,6 @@
+// src/components/Home.jsx
+import { Link } from "react-router-dom";
+
 export default function Home() {
   const services = [
     { title: "Lawn Mowing", icon: "/mowing.jpg" },
@@ -34,8 +37,8 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="hero" style={{ backgroundImage: "url('/home.png')" }}>
+      {/* ✅ Hero Section */}
+      <section className="hero">
         <div className="hero-overlay">
           <h1>Transform Your Outdoors Into a Breathtaking Escape</h1>
           <p className="tagline">
@@ -43,15 +46,19 @@ export default function Home() {
             property’s beauty and value.
           </p>
           <div className="hero-actions">
-            <a href="tel:123456789" className="btn primary">Call Now</a>
-            <a href="/booking" className="btn secondary">Book Now</a>
+            <a href="tel:123456789" className="btn primary">
+              Call Now
+            </a>
+            <Link to="/booking" className="btn secondary">
+              Book Now
+            </Link>
           </div>
           <div className="brand-line">NorBec</div>
           <div className="slogan">Loyal 2 Your Soil</div>
         </div>
       </section>
 
-      {/* Home Services Teaser */}
+      {/* ✅ Home Services Teaser */}
       <section className="home-services">
         <h2>Services</h2>
         <div className="home-services-grid">
@@ -62,12 +69,16 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+        {/* ✅ Updated with React Router Link */}
         <div className="view-all">
-          <a href="/services" className="btn primary">View All Services</a>
+          <Link to="/services" className="btn primary">
+            View All Services
+          </Link>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* ✅ Testimonials Section */}
       <section className="testimonials">
         <h2>What Our Clients Say</h2>
         <div className="testimonial-grid">
