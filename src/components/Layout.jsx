@@ -1,3 +1,4 @@
+// src/components/Layout.jsx
 import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
 import Footer from "./Footer";
@@ -26,10 +27,18 @@ export default function Layout() {
 
           {/* Navigation */}
           <nav className={`nav ${menuOpen ? "open" : ""}`}>
-            <NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink>
-            <NavLink to="/services" onClick={() => setMenuOpen(false)}>Services</NavLink>
-            <NavLink to="/booking" onClick={() => setMenuOpen(false)}>Booking</NavLink>
-            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+            <NavLink to="/" end onClick={() => setMenuOpen(false)}>
+              Home
+            </NavLink>
+            <NavLink to="/services" onClick={() => setMenuOpen(false)}>
+              Services
+            </NavLink>
+            <NavLink to="/booking" onClick={() => setMenuOpen(false)}>
+              Booking
+            </NavLink>
+            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -48,6 +57,7 @@ export default function Layout() {
           color: #fff;
           padding: 15px 30px;
           position: relative;
+          z-index: 100; /* keeps header above hero */
         }
 
         .header-inner {
@@ -96,6 +106,9 @@ export default function Layout() {
           padding: 20px;
           border-radius: 8px;
           gap: 15px;
+
+          /* ✅ Ensures dropdown shows on top of hero */
+          z-index: 1000;
         }
 
         .nav.open {
@@ -116,7 +129,7 @@ export default function Layout() {
           color: #ffe082;
         }
 
-        /* 🖥️ Desktop */
+        /* Desktop view */
         @media (min-width: 768px) {
           .hamburger {
             display: none;
@@ -128,6 +141,7 @@ export default function Layout() {
             background: none;
             padding: 0;
             gap: 20px;
+            z-index: auto;
           }
         }
       `}</style>
