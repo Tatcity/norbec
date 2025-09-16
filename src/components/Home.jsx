@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";  // ✅ added
+import { Link } from "react-router-dom";  // ✅ Use React Router navigation
 
 export default function Home() {
   const services = [
@@ -46,7 +46,10 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a href="tel:123456789" className="btn primary">Call Now</a>
-            <a href="/booking" className="btn secondary">Book Now</a>
+            {/* ✅ Updated to use React Router Link */}
+            <Link to="/booking" className="btn secondary">
+              Book Now
+            </Link>
           </div>
           <div className="brand-line">NorBec</div>
           <div className="slogan">Loyal 2 Your Soil</div>
@@ -65,7 +68,7 @@ export default function Home() {
           ))}
         </div>
         <div className="view-all">
-          {/* ✅ Updated to use React Router */}
+          {/* ✅ Also fixed this to use Link */}
           <Link to="/services" className="btn primary">
             View All Services
           </Link>
