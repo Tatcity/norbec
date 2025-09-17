@@ -1,17 +1,22 @@
-// src/components/Layout.jsx
-import { NavLink, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
-import ScrollToTop from "./ScrollToTop"; // ✅ added import
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // ✅ Scroll to top on every route change
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto" // change to "smooth" for smooth scroll
+    });
+  }, [pathname]);
 
   return (
     <div className="app-layout">
-      {/* ✅ ensures page scrolls to top on route change */}
-      <ScrollToTop />
-
       {/* Header */}
       <header className="header">
         <div className="header-inner">
@@ -57,11 +62,11 @@ export default function Layout() {
 
       <style jsx="true">{`
         .header {
-          background: linear-gradient(135deg, #2D1B2A, #6a2c70);
+          background: linear-gradient(135deg, #2d1b2a, #6a2c70);
           color: #fff;
           padding: 15px 30px;
           position: relative;
-          z-index: 2000; /* ✅ keeps header/nav above hero */
+          z-index: 2000;
         }
 
         .header-inner {
@@ -98,7 +103,7 @@ export default function Layout() {
           color: #fff;
           cursor: pointer;
           display: block;
-          z-index: 2001; /* ✅ hamburger always clickable */
+          z-index: 2001;
         }
 
         .nav {
@@ -111,8 +116,6 @@ export default function Layout() {
           padding: 20px;
           border-radius: 8px;
           gap: 15px;
-
-          /* ✅ dropdown always above hero */
           z-index: 3000;
         }
 
@@ -134,7 +137,6 @@ export default function Layout() {
           color: #ffe082;
         }
 
-        /* Desktop view */
         @media (min-width: 768px) {
           .hamburger {
             display: none;
@@ -146,7 +148,6 @@ export default function Layout() {
             background: none;
             padding: 0;
             gap: 20px;
-            z-index: auto;
           }
         }
       `}</style>

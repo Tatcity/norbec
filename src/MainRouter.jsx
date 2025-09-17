@@ -10,7 +10,7 @@ export default function MainRouter() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Home />} />          {/* Home page */}
+        <Route index element={<Home />} /> {/* Home page */}
         <Route path="services" element={<Services />} />
         <Route path="booking" element={<Booking />} />
         <Route path="contact" element={<Contact />} />
